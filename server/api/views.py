@@ -4,15 +4,15 @@ from rest_framework.permissions import AllowAny
 from . import serializers
 from .models import Profile, Post, Comment
 
-class CreateUserView(generice.CreateAPiView):
+class CreateUserView(generics.CreateAPIView):
     serializer_class = serializers.UserSerializer
-    permission_class = (AllowAny,)
+    permission_classes = (AllowAny,)
 
 class ProfileViewSet(viewsets.ModelViewSet):
     queryset = Profile.objects.all()
-    serializer_class = serializers.PostSerializer
+    serializer_class = serializers.ProfileSerializer
 
-    def perform_create(self,serializer):
+    def perform_create(self, serializer):
         serializer.save(userProfile=self.request.user)
 
 class MyProfileListView(generics.ListAPIView):
