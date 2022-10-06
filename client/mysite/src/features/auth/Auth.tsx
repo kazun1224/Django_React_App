@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React,{ FC } from "react";
 import { AppDispatch } from "../../app/store";
 import { useSelector, useDispatch } from "react-redux";
 import styles from "./Auth.module.css";
