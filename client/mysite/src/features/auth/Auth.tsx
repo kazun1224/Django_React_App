@@ -7,7 +7,7 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { TextField, Button, CircularProgress } from "@material-ui/core";
 
-// import { fetchAsyncGetPosts, fetchAsyncGetComments } from "../post/postSlice";
+import { fetchAsyncGetPosts, fetchAsyncGetComments } from "../post/postSlice";
 
 import {
   selectIsLoadingAuth,
@@ -70,8 +70,8 @@ const Auth: FC = () => {
               await dispatch(fetchAsyncCreateProf({ nickName: "anonymous" }));
 
               await dispatch(fetchAsyncGetProfs());
-              // await dispatch(fetchAsyncGetPosts());
-              // await dispatch(fetchAsyncGetComments());
+              await dispatch(fetchAsyncGetPosts());
+              await dispatch(fetchAsyncGetComments());
               await dispatch(fetchAsyncGetMyProf());
             }
             await dispatch(fetchCredEnd());
